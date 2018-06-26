@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Order Details</ion-title>
+    </ion-navbar>
+    <ion-card class="dash" >  
+    <ion-row>
+            <ion-col col-12 col-lg-12  col-lg-4 col-xl-3 >
+                <ion-item class="thumbnailItem" >
+                    <ion-thumbnail item-left>
+                        <img-loader src="{{imgurl}}storelogos/small/"></img-loader>
+                    </ion-thumbnail>   
+                    <p><strong>Order ID:</strong>&nbsp; {{orderid}}</p>
+                    <p><strong>EndUser:</strong>&nbsp;{{endtitle}}</p>
+                    <p> <b>Items  &nbsp;</b> {{itemscount}} </p>
+                    <small><p><strong>Date: &nbsp;</strong>{{orderdate}}</p></small>
+                    <ion-item>
+                        <h5 item-left>  <b> Total:&nbsp;&nbsp;&nbsp;{{total|currency:'UGX     ':'':'1.0-1'}}</b></h5>
+                        
+                    </ion-item>
+                    
+                </ion-item> 
+            </ion-col>  
+        </ion-row>
+        
+       </ion-card>
+    </ion-header>
+    
+    <ion-content>
+    <ion-card class="" ngFor='let one of orderdetails;let index=i;' class="card-class">
+         
+       
+            <ion-row class="some-padding">
+                <ion-col col-6   >
+                        <h5 class="bold ">Product</h5>
+                    </ion-col>
+                    <ion-col col-3  >
+                        <h5 class="bold">qty ordered</h5>
+                    </ion-col>
+                    <ion-col  col-3 >
+                        <h5 class="bold">Amount</h5>
+                    </ion-col>
+            </ion-row>
+                
+            <ion-row  *ngFor='let one of orderdetails; let  i=index;' class="some-padding">
+                
+                        <ion-col col-6  class=" ">{{one.subname}}</ion-col>
+                        <ion-col col-3 class=" ">{{one.qtyordered}} {{one.units}}</ion-col>
+                        <ion-col col-3  class="">{{one.amount|currency:'&nbsp;':'':'1.0-1'}}</ion-col>
+               
+            </ion-row>
+        </ion-card>
+    </ion-content>

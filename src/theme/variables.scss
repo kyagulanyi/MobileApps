@@ -1,0 +1,173 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #fff,
+  dark:       #000,
+  color1:     #ee3020,
+  color2:     #497602,
+  color3:     #282324,
+  color4:     #f1ab00,
+  color5:     #e5e5e5,
+  color6:     #9ca4a9,
+  color7:     #ee3020,
+  color8:   #7bbd12,
+  color9: #595455,
+  color10: #aca5a7,
+  primary2: #6f84a9,
+);
+
+
+// App  Variables
+$mainFont:1.3rem;
+ $appFonts:(h3:$mainFont + .3,h4:$mainFont + .1,h5:$mainFont,p:$mainFont - .1);
+ @each $head , $fontSize in $appFonts {
+      #{$head}{
+        font-size:$fontSize!important;
+      } 
+ }
+$list-ios-activated-background-color: #d9d9d9;
+$list-md-activated-background-color: #f1f1f1;
+$list-wp-activated-background-color: #aaa;
+
+$mainHeight:44px;
+$mainRadius:0px;
+$mainMarg:8px;
+$iconFontSize:2rem; 
+$imgThumbnailSize:90px;
+// header Variables
+
+$toolbar-ios-height:$mainHeight;
+$toolbar-ios-button-font-size:1rem;
+$toolbar-ios-title-font-size:$mainFont;
+$toolbar-ios-title-font-weight:600;
+$toolBarBackGround:color($colors,color1);
+$toolbar-ios-title-text-color:color($colors,light);
+$navBarPadding:$mainMarg/2; 
+$headerIconSize:2.2rem;
+$headerIconColor:color($colors,light);
+
+// AppForm Variables
+$appFormItemHeight:$mainHeight;
+$inputFontSize:$mainFont - .1;
+$inputPlaceHolderColor:color($colors,color6) ;
+$selcetTextColor:color($colors,color2) ; 
+$inputTextColor:color($colors,color2); 
+$iconInputColor:color($colors,color2) ;
+$iconInputWidth:24px;
+$appFormRadius:$mainRadius;
+
+// check out Form Variable
+$checkFormHeight:$mainHeight;
+//main Button Variables
+$button-ios-height:$mainHeight;
+$button-ios-border-radius:$mainHeight/2;
+$button-ios-font-size:$mainFont;
+
+// Side Menu Variables
+$menu-width:220px;
+$menu-small-width:$menu-width;
+$menuImgProfileSize:$menu-width/3;
+$menuItemHeight:$mainHeight;
+
+// Tabs Variables 
+$tabs-ios-tab-text-color:color($colors,light); 
+$tabs-ios-tab-text-color-active:$tabs-ios-tab-text-color;
+$tabs-ios-tab-icon-color:$tabs-ios-tab-text-color;
+$tabs-ios-tab-icon-color-active:$tabs-ios-tab-icon-color;
+$tabs-ios-tab-font-size:$mainFont;
+$tabs-ios-tab-icon-size:2.2rem;
+// counter Variables
+$counterBtnSize:30px;
+
+// Like , cart , share Buttons
+$likeBtnWidth:50px;
+$likeBtnHeight:38px;
+
+// Radio Buttons Group Variable
+
+$radioSize:16px;
+$radioRadius:50%;
+
+// checkbox variables
+$checkbox-ios-background-color-off:color($colors,light);
+$checkbox-ios-background-color-on:color($colors,light);
+$checkbox-ios-icon-size:16px;
+$checkbox-ios-icon-border-width:1px;
+$checkbox-ios-icon-border-color-off:color($colors,color2);
+$checkbox-ios-icon-border-color-on:color($colors,color2);
+$checkbox-ios-icon-border-radius:0px;
+$checkbox-ios-icon-checkmark-width:2px;
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+$ion-ripple-color: #fff !default;
+$ion-ripple-duration: .45s !default;
+//ion spinner
+//$loading-ios-background: transparent;
+$spinner-ios-ios-color:	#69717d;	
+$spinner-ios-bubbles-color:	#000;
+$spinner-ios-circles-color:	#69717d;	
+$spinner-ios-crescent-color:	rgb(128, 103, 103);	
+$spinner-ios-dots-color:	#444;
+$loading-ios-spinner-color:	#483b3a;
+//refreshe	
+$refresher-icon-color: #483b3a;
+//$refresher-icon-background: color($colors, color5);	
+$refresher-text-font-size:	16px;	
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+// @import '../lib/ion-ripple/ion-ripple';

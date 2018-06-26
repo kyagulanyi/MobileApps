@@ -1,0 +1,58 @@
+page-smallmodal {
+    margin-top: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 13px !important;
+    overflow: hidden !important;
+    max-width: 270px;
+    max-height: 200px;
+    position: absolute;
+    .content-ios{
+        background:rgba(color($colors,color5),.9);
+        .scroll-content{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+    }
+    .toolbar-ios {
+       
+        border-top-left-radius: 13px !important; 
+        border-top-right-radius: 13px !important;
+    }
+    .transparent {
+        background: rgba($color: #fff, $alpha: 0.96);
+    }
+    .grid {
+        margin-left: 50px !important;
+        .grid {
+            margin-left: 50px !important;
+            padding: 0px;
+            .col {
+                padding: 0px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                &:last-of-type {
+                    justify-content: flex-end;
+                }
+                .button {
+                    width: auto;
+                    height: $counterBtnSize;
+                    margin: 0px;
+                    max-width: 100%;
+                    .button-inner {
+                        font-size: 1.1rem!important;
+                    }
+                }
+            }
+        }
+        .ratingGroup {
+            margin: 0px 0px $mainMarg/2;
+        }
+      
+    }
+    .toolbar-background-ios {
+        background: color($colors, color3) !important;
+    }
+}

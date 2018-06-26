@@ -1,0 +1,39 @@
+page-complete-order {
+    .content-ios{
+        //background:rgba(color($colors,color5),.9);
+        .scroll-content{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+    }
+    .container{
+        text-align:center;
+        width:100%;
+        .icon{
+            font-size:15rem;
+            color: color($colors,color2);
+        }
+        h3,.thankYou{
+            font-weight:bold;
+            font-size:1.8rem!important;
+            margin:0px;
+            @include whiteNormal(20px,1);
+        }
+        p{
+            @include whiteNormal(15px,1);
+            margin:$mainMarg  0px;
+            font-weight:500;
+        }
+        .date{
+            span{
+                width:100%;
+                @include whiteNormal(15px,1);
+                font-weight:600;
+                color: color($colors,color1);
+                font-size:$mainFont;
+            }
+            margin-bottom:$mainMarg;
+        }
+    }
+}

@@ -1,0 +1,131 @@
+<ion-header>
+    <ion-navbar color='danger'>
+        <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+        <ion-title>Creative Sales</ion-title>
+    </ion-navbar>
+    <ion-card class="dash">
+            <ion-row class="top" >
+                    <ion-col col-12 col-md-6 col-lg-4 col-xl-3>
+                        <h4 class="title">Resources</h4>
+                  <div class="appForm">
+                    <ion-list >
+                            <ion-item class="search" [ngClass]="{'noLabel':storeid != undefined} ">
+                                <ion-label>Select Store</ion-label>
+                                <ion-select [(ngModel)]='storeid' name='storeid' required="required" (ngModelChange)='pickstore($event)'>
+                                    <div *ngFor='let one of stores; let i=index;'>
+                                        <ion-option value="{{one.store_id}}" style="text-transform:capitalize;">{{one.storename}}</ion-option>
+                                    </div>
+                                </ion-select>
+                            </ion-item> 
+                        </ion-list>
+                    </div>
+                    </ion-col></ion-row></ion-card>
+    <!-- <ion-card class='dash dash1'>
+        <ion-row class="top">
+            <ion-col col-12 col-md-6 col-lg-4 col-xl-3>
+                <h4 class="title">Resources Report</h4>
+                <ion-item class="search" [ngClass]="{'noLabel':storeid != undefined} ">
+                    <ion-label>Select Store</ion-label>
+                    <ion-select [(ngModel)]='storeid' name='storeid' required="required" (ngModelChange)='pickstore($event)'>
+                        <div *ngFor='let one of stores; let i=index;'>
+                            <ion-option value="{{one.store_id}}" style="text-transform:capitalize;">{{one.storename}}</ion-option>
+                        </div>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-card> -->
+</ion-header>
+
+<ion-content>
+    <span *ngIf='selected'>
+            <ion-grid class="nomarginnopadding noitems grid1" *ngIf='status' >
+                    <ion-row class='inner'>
+                      <ion-col col-2></ion-col>
+                      <ion-col col-8>
+                          <ion-icon name="custom-cloud-sync">
+                          </ion-icon>
+                          <h5>Please select a store</h5>
+                        
+                      </ion-col>
+                      <ion-col col-2></ion-col>
+                    </ion-row>
+                </ion-grid>
+       
+        </span>
+
+    <span *ngIf='!selected'>
+        <ion-grid class="nomarginnopadding" id='pageheading'>
+            <ion-card class="dash">
+                <ion-row class="top">
+                    <ion-col col-12 *ngFor='let store of storedetails; let i=index;'>
+                        <h4 class="title">{{store.store_name}}</h4>
+                        <h5>Resources Report</h5>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </ion-grid>
+
+        <ion-grid class="nomarginnopadding" id='pagebody' *ngIf='!status'>
+            <ion-card class="dash">
+                <ion-row class='top' *ngFor='let res of resources; let g=index;'>
+                        <ion-col col-12 col-md-6 col-lg-4 col-xl-3 class="nopadding" style="margin-bottom:10px!important;">
+                            <ion-item class="thumbnailItem">
+                                <ion-thumbnail item-left>
+                                    <ion-badge class="res">
+                                        <h5 class="resinner">{{res.icon}}</h5>
+                                    </ion-badge>
+                                </ion-thumbnail>
+                                <h4>Resource: {{res.resource}}</h4>
+                                <small><strong>last updated:</strong>&nbsp; {{res.dateupdated}}</small>
+                                <hr/>
+                                <ion-row>
+                                    <ion-col col-8 class="bold">Component</ion-col>
+                                    <ion-col col-4 class="bold aligncenter">Status</ion-col>
+                                </ion-row>
+                                <ion-row *ngFor='let comp of res.components; let i = index;'>
+                                    <ion-col col-8 class="bold b-r" (click)='from(i)'>{{comp.comp}}</ion-col>
+                                    <ion-col col-4 class="aligncenter b-r" (click)='from(i)'>{{comp.status}}</ion-col>
+                                    <ion-col col-12 [hidden]="!hidestatus.i">to hide</ion-col>
+                                </ion-row>
+                            </ion-item>
+                            <ion-item>
+                                    <ion-icon   (click)='updateComponent(res.id)' class="iconupdate"  name="custom-pencil" class="icon-fab2" item-end color="color7"><h4 color="color8"> Update</h4></ion-icon>
+                                <!-- <ion-icon name="md-cloud"  (click)='updateComponent(res.id)' class="iconupdate" item-end></ion-icon> -->
+                            </ion-item>
+                           
+                        </ion-col>
+                    </ion-row>
+            </ion-card>
+        </ion-grid>
+
+        <ion-grid class="nomarginnopadding" id='pagebody' *ngIf='status'>
+            <ion-row class='nopadding'>
+                <span class='working' style="background-color:white !important;" class='nothing'>
+                    <div class='working'>
+                        <ion-col col-12 col-md-6 col-lg-4 col-xl-3 >
+                            <ion-item class="thumbnailItem">
+                                <ion-grid style="background-color:white !important;">
+                                  <ion-row class='one'>
+                                    <ion-col col-2></ion-col>
+                                    <ion-col col-8>
+                                      <ion-icon class="norder-head" name="ios-thunderstorm-outline" style="font-size:200px;"></ion-icon>
+                                    </ion-col>
+                                    <ion-col col-2></ion-col>
+                                    <ion-col col-3></ion-col>
+                                    <ion-col col-12>
+                                      <h4 class="norder-head">Sorry there are no resources for the Selected Store </h4>
+                                        <!-- <small class="norder-subtitle">Contact regional manager</small> -->
+                                    </ion-col>
+                                  </ion-row>
+                                </ion-grid>
+                            </ion-item>
+                </ion-col>
+                </div>
+                </span>
+    </ion-row>
+    </ion-grid>
+    </span>
+
+
+</ion-content>

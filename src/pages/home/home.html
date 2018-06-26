@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button menuToggle icon-only persistent="true">
+                <ion-icon name="ios-menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-row class="align">
+            <ion-title>TradeMo</ion-title>
+        </ion-row>
+    </ion-navbar>
+
+    
+    <ion-card class='dash'>
+        <ion-row class="top">
+            <ion-col col-12   col-lg-4 col-xl-3>
+                <h4 class="title">Dashboard</h4>
+                <small>Data visualization for your summary data</small>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="nomarginnopadding">
+        <ion-row>
+            <ion-col col-12 col-lg-12 col-lg-4 col-xl-3 class=" rownopadding">
+                <ion-item class="thumbnailItem nopadding">
+                    <ion-row class="background">
+                        <h4 class="headermarginpadding no"><b style="text-transform:uppercase;">ORDERS FOR {{month}}</b> </h4>
+                    </ion-row>
+                    <hr>
+                    <canvas #barCanvas></canvas>
+                </ion-item>
+            </ion-col>
+            <ion-col col-12 col-lg-12 col-lg-4 col-xl-3 class="rownopadding">
+                <ion-item class="thumbnailItem">
+                    <ion-row class="background">
+                        <h4 class="headermarginpadding">ANNUAL ORDERS </h4>
+                    </ion-row>
+                    <hr>
+                    <canvas #barCanvasyear></canvas>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

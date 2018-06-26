@@ -1,0 +1,66 @@
+<ion-split-pane>
+    <ion-menu [content]="content" swipeEnabled="true">
+        <ion-header>
+            <ion-toolbar>
+           
+                <ion-item>
+                        <ion-thumbnail item-start>
+                                <img-loader class="iconload" src="{{imgurl}}logos/small/{{logo}}" (load)="OnImgaeLoad($event)" (click)='goto(prof)'> </img-loader>
+                        </ion-thumbnail>  
+                        
+                </ion-item>
+                <ion-item>
+                    <h5 class='name'>{{companyname}}</h5><br>
+                    <h5 class='name'>{{firstname}}</h5>
+                    <h5 class='name'>{{secondname}}</h5><br>
+                    <p>
+                        <ion-icon></ion-icon>
+                        {{role}}
+                    </p>
+                </ion-item>
+            </ion-toolbar>
+        </ion-header>
+    
+        <ion-content>
+            <ion-list *ngIf="role=='distributionm'">
+                <ion-item menuClose *ngFor="let p of pages , let i = index" (click)="openPage(p); selectItem(i)" [ngClass]="{'active':activeBtn == i}">
+                    
+                        <ion-icon class="menuicon" item-start [name]="p.icon"></ion-icon>
+                        {{ p.title }}
+                        </ion-item>
+                    
+                    
+                    
+            </ion-list>
+            <ion-list *ngIf=" role == 'Regional manager' ">
+                <ion-item menuClose *ngFor="let p of pages1 , let i = index" (click)="openPage(p); selectItem(i)" [ngClass]="{'active':activeBtn == i}">
+                    
+                        <ion-icon class="menuicon" item-start [name]="p.icon"></ion-icon>
+                        {{ p.title }}
+                        </ion-item>
+                    
+                    
+                    
+            </ion-list>
+            <ion-list *ngIf=" role== 'Sales manager' ">
+                <ion-item menuClose *ngFor="let p of pages2 , let i = index" (click)="openPage(p); selectItem(i)" [ngClass]="{'active':activeBtn == i}">
+                    
+                        <ion-icon class="menuicon" item-start [name]="p.icon"></ion-icon>
+                        {{ p.title }}
+                        </ion-item>
+                    
+                    
+                    
+            </ion-list>
+        </ion-content>
+        <ion-footer>
+            <button block color="color3" ion-button (click)="logOut()" menuClose>
+          <ion-icon name="ios-log-out"></ion-icon>
+          Sign Out
+        </button>
+        </ion-footer>
+    </ion-menu>
+    
+    <!-- main navigation -->
+    <ion-nav [root]="rootPage" [class.animateApp]="global.animateVarible==true" main #content swipeBackEnabled="true"></ion-nav>
+    </ion-split-pane>

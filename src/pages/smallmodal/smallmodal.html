@@ -1,0 +1,39 @@
+
+<ion-header class="transparent">
+
+    <ion-navbar>
+        <ion-title>Update Delivery </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="transparent">
+    <!-- <h4 class="m">Delivery for {{name}}</h4> -->
+    <ion-grid>
+        <ion-row>
+            <ion-col col-lg-12 col-md-12 col-lg-4 col-xl-3 class="center" >
+                <h4 class="m">Delivery for {{data.subname}}</h4>
+                <div class="counter">
+                    <ion-icon name="md-remove" (click)="decrement()"> </ion-icon>
+                    <ion-item>
+                        <ion-input type="num" [(ngModel)]="data.qtydelivered"></ion-input>
+                    </ion-item>
+                    <ion-icon name="md-add" (click)="increment()"></ion-icon>
+                </div>
+            </ion-col>
+            <ion-col col-4>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+   
+
+</ion-content>
+<ion-footer>
+    <ion-segment>
+        <button ion-button class=" cancel" type='reset' (click)='dismiss()'>Cancel</button>
+        <button ion-button class=" updateb" type='submit' (click)='update()'>Update</button>
+    </ion-segment>
+ 
+</ion-footer>

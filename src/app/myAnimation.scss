@@ -1,0 +1,166 @@
+@import "../assets/animate/animate.scss";
+.animateApp{
+// ********************** My Classes that extended *************
+
+    .pulse{
+        @include pulse(
+            $duration:1.5s,
+            $count: infinite,
+            $delay: 0s,
+            $function: ease, 
+            $fill: both
+            ); 
+        } 
+    .bounceInRight{
+        @include bounceInRight(
+            $duration:1.5s,
+            $count: 1,
+            $delay: .2s,
+            $function: ease, 
+            $fill: both
+            ); 
+        } 
+
+    .flipInX{
+        @include flipInX(
+            $duration:1.5s,
+            $count: 1,
+            $delay: .2s,
+            $function: ease, 
+            $fill: both
+            );
+        }
+
+    
+    .rotateInDownLeft{
+        @include rotateInDownLeft(
+            $duration:1.5s,
+            $count: 1,
+            $delay: .2s,
+            $function: ease, 
+            $fill: both
+            ); 
+        }
+    .fadeIn{
+        @include fadeIn(
+            $duration:1.5s,
+            $count: 1,
+            $delay: 0s,
+            $function: ease, 
+            $fill: both
+            ); 
+        }
+ 
+    .fadeInUp{
+        @include fadeInUp(
+            $duration:1.5s,
+            $count: 1,
+            $delay: 0.25s,
+            $function: ease, 
+            $fill: both
+            ); 
+        }
+    .fadeInDown{
+            @include fadeInDown(
+            $duration:1.5s,
+            $count: 1,
+            $delay: .25s,
+            $function: ease, 
+            $fill: both
+            ); 
+        }
+    .fadeInRight{
+        @include fadeInRight(
+        $duration:1.5s,
+        $count: 1,
+        $delay: .25s,
+        $function: ease, 
+        $fill: both
+        ); 
+    }
+    
+    .fadeInLeft{
+        @include fadeInLeft(
+        $duration:1.5s,
+        $count: 1,
+        $delay: .25s,
+        $function: ease, 
+        $fill: both
+        ); 
+    } 
+        
+// *************************************
+    .logo{
+        @extend .fadeInUp;
+    }
+    .appForm{
+        .item-ios{
+            &:nth-child(2n + 1){
+                @extend .fadeInRight;
+            }
+            &:nth-child(2n){
+                @extend .fadeInLeft;
+            }
+        }
+    }
+    // .sign{
+    //     .scroll-content{
+    //         .button-ios{
+    //             @extend .fadeInUp;      
+    //         }
+    //     }
+    // } 
+    .item-ios{
+        &.thumbnailItem{
+            img{
+                @extend .rotateInDownLeft;
+            }
+        }
+    }
+    .icon{
+        &[item-right]{
+             @extend .fadeInRight; 
+        }
+        &[item-left]{
+             @extend .fadeInLeft; 
+        }
+    }
+    .button{
+        &.like{
+            .active{
+                @extend .pulse;
+            }
+        }
+    }
+    .header-ios{
+        .bar-button-ios{
+            @extend .fadeInDown; 
+        }
+    }
+    page-restaurant-menu{
+        .button-ios{
+            @extend .fadeInUp; 
+        }
+    }
+    page-details{
+        .imgBg{
+            .grid{
+                @extend .fadeInLeft; 
+            }
+            .cart{
+                @extend .fadeInRight;
+            }
+        }
+    }
+  
+  
+    page-profile{
+        .imgBg{
+            @extend .fadeInUp;
+        }
+    }
+    .noItems{
+        @extend .fadeInUp;
+    }
+}
+

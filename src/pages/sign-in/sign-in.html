@@ -1,0 +1,19 @@
+<ion-content class="sign">
+    <div class="appForm">
+        <!-- <img src="assets/img/logo.png" /> -->
+        
+        <ion-list>
+            <ion-item>
+                <ion-icon name="ios-mail" item-left></ion-icon>
+                <ion-input type='email' placeholder="Email address" name="emails" [(ngModel)]='details.email' required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="ios-lock" item-left></ion-icon>
+                <ion-input type='password' placeholder="Password" name="passwords" [(ngModel)]='details.password' required></ion-input>
+            </ion-item>
+        </ion-list>
+        <h5 *ngIf='errors'>{{data.errors}}</h5>
+        <button ion-button block color="color1" tappable (click)="login()">Log In</button>
+        <p (click)=" presentModal('ForgotPasswordPage')">Forgot Password ?</p>
+    </div>
+</ion-content>

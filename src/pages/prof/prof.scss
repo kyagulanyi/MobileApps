@@ -1,0 +1,36 @@
+    page-prof {
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin: auto;    
+            display: block;
+            text-align: center;
+            
+        }
+        .col img {
+            height: 100%;
+            width: auto;
+            display: block;
+            margin: auto;
+          }
+        .rows {
+            margin-top: 100px !important;
+            margin-bottom: 15px !important;
+            height: 100px !important;
+            width: 100% !important;
+        }
+        .text>h5 {
+            text-align: center !important;
+            font-size: 14px !important;
+        }
+        small {
+            text-align: center !important;
+            color: #5C841C !important;
+            font-weight: bolder;
+        }
+        .button-ios-color1 {
+            color: #fff;
+            background-color: #497602 !important;
+        }
+    }

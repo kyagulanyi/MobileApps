@@ -1,0 +1,155 @@
+page-resources {
+    .content-ios {
+        background: color($colors, color5);
+        .scroll-content {
+            padding-bottom: 0px!important;
+            margin-top: 60px !important;
+            >h5 {
+                color: color($colors, dark);
+                @include whiteNormal($mainHeight, 1);
+                padding: 0px $mainMarg;
+                margin: 0px;
+            }
+        }
+        .grid {
+            padding: $mainMarg/2;
+            background: color($colors, color5);
+            .col {
+                padding: $mainMarg/2;
+                &:last-of-type {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .appForm {
+            padding: $mainMarg*2;
+        }
+    }
+    .appForm {
+        .item-ios {
+            &.item-block {
+               
+                border: 0px solid color($colors, light)!important;
+               
+                }}}
+                 .nordar{
+        
+        font-size: 200px !important;
+           
+    }
+    .select-ios .select-icon .select-icon-inner {
+        left: 0px;
+        top: 0%;
+        margin-top: 0px;
+        position: absolute;
+        width: 0%;
+        height: 0%;
+        border-top: 0px solid;
+        border-right: 0px solid transparent;
+        border-left: 0px solid transparent;
+        color: #999;
+        pointer-events: none;
+    }
+    .appForm .item-ios.item-block .item-inner {
+        padding: 0px;
+        border: none !important;
+        margin-bottom: 8px;
+        margin-top: 2px;
+    }
+    .nordar{
+        
+        font-size: 200px !important;
+           
+    }
+    .working {
+        width: 100% !important;
+    }
+    .b {
+        margin-top: 8px;
+        padding: 10px;
+    }
+    .total {
+        text-align: center;
+    }
+    .b-r {
+        border-bottom: 1px solid rgba(120, 130, 140, .13) !important;
+    }
+    .moze {
+        padding: 10px;
+        height: 30px;
+    }
+    .res {
+        height: 90px;
+        width: 90px;
+        background: lightgray;
+        border-radius: 50px;
+        font-size: 40px;
+        margin: 15px;
+    }
+    .resinner {
+        margin: 15px;
+        font-size: 40px !important;
+    }
+    .aligncenter {
+        text-align: center;
+    }
+    .dash {
+        margin-bottom: 0%;
+    }
+    .noitems {
+        margin-top: 105px !important;
+        background-color: white !important;
+        width: 100%;
+        height: 100%;
+        ion-icon {
+            font-size: 150px !important;
+            color: #719439;
+            // margin-left: 50px;
+        }
+        .inner {
+            margin-top: 10% !important;
+            margin-bottom: 40% !important;
+        }
+        h5 {
+            color: #797e71;
+            font-size: 16px !important;
+            // text-align: center;
+            margin-top: 0px !important;
+        }
+    }
+    
+    .dash1 {
+        position: fixed !important;
+        z-index: 3000;
+        height: fit-content;
+    }
+    #pagebody {
+        margin-top: 70px !important;
+        height: 100% !important;
+        .nopadding {
+            height: 100% !important;
+        }
+    }
+    .card-ios {
+        height: inherit;
+    }
+    .appForm .item-ios.item-block {
+        
+         border: 1px solid #9ca4a9 !important;
+        
+     }
+     .title {
+        font-size: 17px !important;
+        margin-top: -4px !important;
+        
+    } 
+    .card-ios h4, .card-ios .alert-ios.select-alert .alert-head h2, .alert-ios.select-alert .alert-head .card-ios h2, .card-ios h5, .card-ios h6 {
+         margin: 5px 0 !important;
+        font-size: 1.4rem;
+        font-weight: normal;
+    }
+    #pagebody {
+        margin-top: 78px !important;
+        height: 100% !important;
+    }  
+}

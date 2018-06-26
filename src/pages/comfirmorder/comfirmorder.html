@@ -1,0 +1,78 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start>
+            <button ion-button round color="dark" (click)="closeModal()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Make Order</ion-title>
+    </ion-navbar>
+    <ion-card class='dash'>
+        <ion-row class="top">
+            <ion-col col-12   col-lg-4 col-xl-3>
+                <small>A list of all Orders to Place</small>
+            </ion-col>
+        </ion-row>
+    </ion-card>  
+</ion-header>
+<ion-content>
+    <ion-grid class="nomarginnopadding" *ngIf='!status'>
+        <ion-row>
+            <ion-col col-12>
+            </ion-col>
+            <ion-col col-12 col-lg-4 col-xl-3 class="rownopadding" *ngFor="let item of items" >
+               <ion-list *ngIf="item.name=='Mirinda orange'">
+                <ion-list-header>
+                    <button ion-button >{{item.name}}</button>
+                  </ion-list-header>
+                <ion-item class="thumbnailItem"  *ngFor="let item1 of  mirindaorange">
+                        <h4 class="product"  item-left>{{item1.name}}</h4>
+                        <ion-note item-end>{{item.unitprice|currency:'UGX  ':'':'1.0-1'}}</ion-note>
+                </ion-item>
+               </ion-list>
+               <ion-list *ngIf="item.name=='Mirinda fruity'">
+                <ion-list-header>
+                    <button ion-button >{{item.name}}</button>
+                  </ion-list-header>
+                <ion-item class="thumbnailItem"  *ngFor="let item1 of  MirindaFruity">
+                        <h4 class="product" item-left>{{item1.name}}</h4>
+                        <ion-note item-end>{{item.unitprice|currency:'UGX  ':'':'1.0-1'}}</ion-note>              
+                </ion-item>
+               </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="nomarginnopadding" id='pagebody' *ngIf='status'>
+        <ion-row class='nopadding' *ngFor='let res of resources; let g=index;'>
+            <span *ngIf="status" class='working' style="height:100% !important;width:100 !important;background-color:white !important;" class='nothing'>
+                <div class='working'>
+                    <ion-col col-12  col-lg-4 col-xl-3 >
+                        <ion-item class="thumbnailItem">
+                            <ion-grid style="background-color:white !important;">
+                              <ion-row>
+                                <ion-col col-2></ion-col>
+                                <ion-col col-8>
+                                  <ion-icon ios='ios-cloud-download' md='md-cloud-download' style="font-size:200px;"></ion-icon>
+                                </ion-col>
+                                <ion-col col-2></ion-col>
+                                <ion-col col-3></ion-col>
+                                <ion-col col-8>
+                                  <h4 style="color:black;">No Products from server </h4>
+                                    <small style='color:#497602 !important;text-align: center !important;'>Contact regional manager</small>
+                                </ion-col>
+                                <ion-col col-2></ion-col>
+                              </ion-row>
+                            </ion-grid>
+                        </ion-item>
+            </ion-col>
+            </div>
+            </span>
+        </ion-row>
+        
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <div>
+        <button ion-button block color="color2" (click)="makeorder()">Place Order</button>
+    </div>
+</ion-footer>

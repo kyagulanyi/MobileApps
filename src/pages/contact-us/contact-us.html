@@ -1,0 +1,128 @@
+<ion-header>
+    <ion-navbar>
+           
+        <ion-buttons >
+            <button ion-button menuToggle icon-only>
+                <ion-icon name="ios-menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title >TradeMo</ion-title>
+       
+
+    </ion-navbar>
+    
+    <ion-card class="dash" >
+        <ion-navbar>
+               
+                                <div item-start class="top"  *ngIf="!showSearchBar">
+                                        <h4 class="title">Orders</h4>
+                                        <small>A summary of all the Inventories On Stock </small>
+                                </div>
+                               
+                            
+                <ion-searchbar *ngIf="showSearchBar" (click)="getItems($event)" [showCancelButton]="false" item-start></ion-searchbar>
+                
+                <ion-buttons end>
+                    
+                        <button ion-button icon-only clear   (click)="presentPopover($event)"> <ion-icon name="ios-options"  class="icon-fab2"  color="danger"></ion-icon> </button> 
+                        <button ion-button icon-only clear  (click)="clickedSearchIcon($event)"><ion-icon ios="ios-search" md="md-search" class="icon-fab2"  color="danger"></ion-icon></button>               
+                    
+                    </ion-buttons>
+        </ion-navbar>
+       
+        
+        <ion-row>
+                <ion-col col-12 col-md-6 col-lg-4 col-xl-3 >
+                    <div >
+                        <ion-segment  [(ngModel)]="proptype">
+                        
+                            <ion-segment-button   value="in">
+               
+                                <ion-icon ios="ios-arrow-down-outline" >&nbsp;&nbsp;<h4 class="norder-subtitle"> Orders-In</h4> </ion-icon>
+                             
+                            </ion-segment-button>
+                            <ion-segment-button  value="out">
+                                    <ion-icon name="ios-arrow-up-outline">&nbsp;&nbsp; <h4  class="norder-subtitle">Orders-Out</h4></ion-icon>
+                            
+                             
+                            </ion-segment-button>
+                            
+                          </ion-segment>
+               
+                       </div> 
+                       
+                      
+                </ion-col>
+            </ion-row>
+
+     </ion-card>
+       
+                      
+  
+
+
+
+</ion-header>
+
+<ion-content>
+       
+              
+    <ion-refresher class="fresher" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+        pullingIcon="ios-refresh-circle-outline"
+        refreshingSpinner="custom-spinner"  
+        ></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-grid class="nomarginnopadding">
+
+
+        <span *ngIf="!orderstate" class='working'>
+                <ion-col col-12 col-lg-12 col-lg-4 col-xl-3 *ngFor="let item of orders| sort1: {property: column, order: order}" (click)="goTo(item.orderid)">
+                    <ion-item class="thumbnailItem">
+                         <ion-thumbnail item-left  >
+                                      <!-- <img-loader src="{{imgurl}}storelogos/small/{{item.logo}}" ></img-loader>  -->
+                            </ion-thumbnail>
+                           
+                        <p><strong>Order id:</strong>&nbsp; {{item.orderid}}</p>
+                        <p><strong>Enduser:</strong>&nbsp; {{item.enduser}}</p>
+                        <!-- <p><strong>Order Amount:</strong>&nbsp; {{item.total|currency:'UGX &nbsp;':'':'1.0-1'}}</p> -->
+                        <p><strong>Ordered Items:</strong>&nbsp; {{item.itemscount}}</p>
+                        <p><strong>Order date:</strong>&nbsp; {{date(item.orderdate)}}</p>
+                    </ion-item>
+                    <span id='free-0'></span>
+        </ion-col>
+        </span>
+        <span *ngIf="orderstate" class='working' class='norder'>
+            <div class='working'>
+                <ion-col col-12 col-lg-12 col-lg-4 col-xl-3 >
+                    <ion-item class="thumbnailItem">
+                        <ion-grid class="norder-grid">
+                          <ion-row>
+                            <ion-col col-2></ion-col>
+                            <ion-col col-8>
+                              <ion-icon ios='ios-cloud-download' md='md-cloud-download' class="nordar"></ion-icon>
+                            </ion-col>
+                            <ion-col col-12 col-lg-12 col-lg-4 col-xl-3>
+                                <!-- <h6 class="norder-head"> Sorry No orders recieved from a server </h6> -->
+                                <h6 class="norder-subtitle"> Please check your internet connection</h6>
+                               <h6 class="norder-subtitle">Or Use the cart button to make orders </h6>
+                        </ion-col>
+                          </ion-row>
+                        </ion-grid>
+                    </ion-item>
+        </ion-col>
+        </div>
+        </span>
+    </ion-grid>
+    <ion-fab right bottom>
+        <ion-row class="top">
+            <ion-col col-12 col-md-6 col-lg-4 col-xl-3>
+                <button ion-fab color="danger" (click)="goToOrder('CartPage')">
+                    <ion-icon name="add" class="icon-fab"></ion-icon>
+            </button>
+            </ion-col>
+        </ion-row>
+    </ion-fab>
+  
+</ion-content>

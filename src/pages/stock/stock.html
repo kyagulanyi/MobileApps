@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-navbar color='danger'>
+        <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+        <ion-title>Tredmo</ion-title>
+    </ion-navbar>
+    <ion-card class="dash" >
+        <ion-navbar>
+            <ion-row class="top" *ngIf="!showSearchBar">
+                <ion-col col-12 col-lg-12   col-lg-4 col-xl-3>
+              <div class="appForm">
+                <ion-list >
+                        <ion-item class="search" [ngClass]="{'noLabel':storeid != undefined} ">
+                            <ion-label>Select Enduser</ion-label>
+                            <ion-select [(ngModel)]='storeid' name='storeid' required="required" (ngModelChange)='pickstore($event)'>
+                                <div *ngFor='let one of relations; let i=index;'>
+                                    <ion-option value="{{one.enduserid}}" style="text-transform:capitalize;" style='color:black !important;'>{{one.endtitle}}</ion-option>
+                                </div>
+                            </ion-select>
+                        </ion-item> 
+                    </ion-list>
+                </div>
+                </ion-col>
+                </ion-row>
+                               
+                <ion-list >
+                    <ion-item *ngIf="showSearchBar">
+                        <ion-searchbar  (click)="getItems($event)" [showCancelButton]="false" item-start></ion-searchbar>
+                    </ion-item></ion-list>          
+               
+                
+                <ion-buttons end>
+                    
+                        <button ion-button icon-only clear   (click)="presentPopover()"> <ion-icon name="ios-options"  class="icon-fab2"  color="danger"></ion-icon> </button> 
+                        <button ion-button icon-only clear  (click)="clickedSearchIcon($event)"><ion-icon ios="ios-search" md="md-search" class="icon-fab2"  color="danger"></ion-icon></button>               
+                    
+                    </ion-buttons>
+                    
+        </ion-navbar>
+       </ion-card>
+    <ion-card class="dash">
+            
+
+                </ion-card>
+    
+   
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content 
+        pullingIcon="ios-refresh-circle-outline"
+        refreshingSpinner="custom-spinner" 
+        ></ion-refresher-content>
+    </ion-refresher>
+        <ion-grid class="nomarginnopadding noitems grid1">
+           <span *ngIf='!selected'>
+            <ion-row class='inner'>
+                <ion-col col-2></ion-col>
+                <ion-col col-8>
+                    <ion-icon name="custom-cloud-sync">
+                    </ion-icon>
+                    <h5>Please select enduser</h5>
+                </ion-col>
+                <ion-col col-2></ion-col>
+            </ion-row>
+        </span>
+            <span *ngIf='selected'>
+            <ion-row *ngFor='let stocks of stock.invenotries; let i=index;'>
+             <ion-col col-lg-12  col-lg-4 col-xl-3>
+                <ion-list>
+                    <ion-list-header>{{stocks.ivname}}</ion-list-header>
+                      <span class='working' *ngFor='let sto of stock.subcats;'>
+                           <span  *ngIf="sto.refinventory==stocks.refinventory"> 
+                                    <ion-item class="thumbnailItem">
+                                            <ion-thumbnail item-left>
+                                                    <img src="assets/img/dink.png"/> 
+                                                </ion-thumbnail>
+                                            <h4>Product:&nbsp; {{sto.subname}}</h4>
+                                            <p><strong>Units:</strong>  &nbsp;{{sto.units}}</p>
+                                            <p><strong>Quantity:</strong> &nbsp;{{sto.qty}}</p>
+                                            <p><strong>Date :</strong> &nbsp;{{date(sto.dateupdated)}} </p>                                
+                                    </ion-item>
+                            <span id='free-0'></span>    
+                          </span>
+                    </span>
+
+                </ion-list>
+             </ion-col>    
+                    </ion-row>
+        </span>
+</ion-grid>
+    
+
+</ion-content>

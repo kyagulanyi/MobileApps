@@ -1,0 +1,186 @@
+page-stock-details {
+    .header-ios {
+        .card-ios{
+            margin: 0px !important;
+            width: 100% !important;
+            .toolbar-ios {
+                padding: $navBarPadding;
+                .bar-buttons-ios {
+                    margin: 0px;
+                    display: flex;
+                }
+                .bar-button-ios {
+                    width: $toolbar-ios-height - $navBarPadding*2;
+                    height: $toolbar-ios-height - $navBarPadding*2;
+                    min-height: 30px;
+                    min-width: 30px;
+                    padding: 0px;
+                    border-radius: $mainRadius;
+                    order: 1;
+                    position: relative;
+                    .badge-ios {
+                        @include position(0px, 0px, auto, auto);
+                    }
+                    .icon {
+                        font-size: $headerIconSize!important;
+                        min-width: auto!important;
+                        color: #ee3020;
+                    }
+                    &.activated {
+                        opacity: 1;
+                    }
+                    &.bar-button-menutoggle {
+                        display: inline-block!important;
+                    }
+                }
+                .toolbar-background-ios {
+                    border: none!important;
+                    background-color: #fff;
+                }
+                .title-ios {
+                    padding: 0px ($toolbar-ios-height - $mainMarg)*2+$mainMarg/2;
+                    .toolbar-title {
+                        color: color($colors,light);
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    .card-content-ios {
+        padding: 0px !important;
+        font-size: 1.4rem;
+        line-height: 1.4;
+    } 
+        
+    background: color($colors, color5);
+   
+    .head{
+        .head-iner{
+            color: color($colors, color8) !important;
+        }
+        text-align: center !important;
+        font-family: sans-serif;
+        font-size: 18px;
+    }
+    .content-ios {
+        background: color($colors, color5);
+       
+     .scroll-content {
+        padding-bottom: 0px!important;
+        margin-top: 160px !important;
+        //background: color($colors, color5);
+        background: color($colors, light);
+       
+      
+        .card-ios {
+            margin: 12px;
+            border-radius: 2px;
+            width: calc(100% - 24px);
+            font-size: 1.4rem;
+            background: #fff;
+            -webkit-box-shadow: 0 0px 0px #fff !important;
+            box-shadow: 0 0px 0px #fff !important;
+        }
+        // ion-col {
+        //     z-index: 0;
+        //     height: 100%;
+        //     position: absolute;
+        //     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .8) 100%); /* I added the 0.8 opacity here, to the last rgba which won't affect the child element */
+        // }
+        
+        .grid {
+            padding: $mainMarg/2;
+           margin-top: 5px !important;
+            background: color($colors, color5);
+            .col {
+                //padding: $mainMarg;
+                &:last-of-type {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+       
+    }
+    padding: $mainMarg*2;
+}
+    .list-ios{
+            .list-header-ios{
+                padding:0px;
+                border-bottom:none;
+                min-height:0px;
+                .label-ios{
+                    color:color($colors,color2);
+                }
+            }
+            .item-ios{
+                [item-left]{
+                    margin:0px;
+                    @include centerHeight(14px);
+                    background-color:color($colors,color3);
+                    font-size:1.1rem;
+                    color: color($colors,light);
+                }
+                &.item-block{
+                    align-items: flex-start;
+                    padding:$mainMarg/2 0px;
+                    .label-ios{
+                        padding:0px $mainMarg/2;
+                        white-space:normal;
+                        color: color($colors,color3);
+                    }
+
+                }
+            }
+        }
+      
+  .item-ios.item-block.thumbnailItem {
+            background: #fff;
+            padding: 0px !important;
+     } 
+     
+    .item-ios {
+    padding-left: 0px !important; 
+    padding-left: 0px  !important; 
+    border-radius: 0;
+    position: relative;
+    font-size: 1.7rem;
+    color: #000;
+    background-color: #fff;
+   
+}
+[col-6] {
+    padding: 8px !important;
+}
+.top {
+    padding: 2px !important;
+}
+.card-class{
+    margin: 6px !important;
+}
+.icon.icon-ios {
+    font-size: 3rem !important;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.some-padding{
+    border-bottom: 0.55px solid #c8c7cc;
+
+}
+
+    }    
+    
+
+
+

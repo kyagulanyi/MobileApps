@@ -1,0 +1,279 @@
+page-cart {
+    .header-ios {
+        .card-ios .toolbar-ios {
+
+        }
+        .card-ios{
+            margin: 0px !important;
+            width: 100% !important;
+            .toolbar-ios {
+                padding: $navBarPadding;
+                .bar-buttons-ios {
+                    margin: 0px;
+                    display: flex;
+                }
+                .bar-button-ios {
+                    width: $toolbar-ios-height - $navBarPadding*2;
+                    height: $toolbar-ios-height - $navBarPadding*2;
+                    min-height: 30px;
+                    min-width: 30px;
+                    padding: 0px;
+                    border-radius: $mainRadius;
+                    order: 1;
+                    position: relative;
+                    .badge-ios {
+                        @include position(0px, 0px, auto, auto);
+                    }
+                    .icon {
+                        font-size: $headerIconSize!important;
+                        min-width: auto!important;
+                        color: #ee3020;
+                    }
+                    &.activated {
+                        opacity: 1;
+                    }
+                    &.bar-button-menutoggle {
+                        display: inline-block!important;
+                    }
+                }
+                .toolbar-background-ios {
+                    border: none!important;
+                    background-color: #fff;
+                }
+                .title-ios {
+                    padding: 0px ($toolbar-ios-height - $mainMarg)*2+$mainMarg/2;
+                    .toolbar-title {
+                        color: color($colors,light);
+                    }
+                }
+            }
+        }
+        
+    }
+    .content-ios {
+        
+        background-color: color($colors, color5);
+        ion-thumbnail {
+            width: 56px!important;
+            height: 56px!important;
+           
+        }
+        .scroll-content {
+            margin-bottom: 0px !important;
+            padding-bottom: 0px!important;
+            //margin-top: 149px !important;
+            >h5 {
+                color: color($colors, dark);
+                @include whiteNormal($mainHeight, 1);
+                padding: 0px $mainMarg;
+                margin: 0px;
+            }
+            .button-ios {
+                border-radius: 22px;
+                height: 50px;
+                font-size: 1.3rem;
+                color: #fff;
+                background-color: #fff !important;
+                margin: 0.4rem 0.2rem;
+                padding: 0 1em;
+            }
+            .button-ios .button-inner {
+                overflow: hidden;
+                color: #588116;
+                font-size: 1.5rem;
+            }
+        
+            .grid{
+                .grid{
+                    padding:0px;
+                    .col{
+                        padding:0px;
+                        overflow:hidden;
+                        display:flex;
+                        align-items:center;
+                        &:last-of-type{
+                            justify-content:flex-end;
+                        }
+                        .button{
+                            width:auto;
+                            height:$counterBtnSize;
+                            margin:0px;
+                            max-width:100%;
+                            .button-inner{
+                                font-size:1.1rem!important;
+                            }
+                        }
+                    }
+                }
+                .ratingGroup{
+                    margin:0px 0px $mainMarg/2;
+                }
+            }
+            
+        
+        }
+        
+       }
+    
+    .appForm {
+        padding: $mainMarg*2;
+        background-color: #fff;
+    }
+    .totalcart {
+        text-align: center;
+        height: 30px;
+        background: white;
+        padding-top: 7px !important;
+        border: 1px solid gray;
+    }
+    strong {
+        color: black;
+    }
+    .appForm .item-ios.item-block {
+        height: 30px;
+    }
+    .item-inner {
+        padding: none;
+    }
+    .select-ios .select-icon .select-icon-inner {
+        left: 0px;
+        top: 0%;
+        margin-top: 0px;
+        position: absolute;
+        width: 0%;
+        height: 0%;
+        border-top: 0px solid;
+        border-right: 0px solid transparent;
+        border-left: 0px solid transparent;
+        color: #999;
+        pointer-events: none;
+    }
+    .appForm .item-ios.item-block .item-inner {
+        padding: 0px;
+        border: none !important;
+        margin-bottom: 8px;
+        margin-top: 2px;
+    }
+    .product
+    {
+        color: black !important;
+        margin-left: 15px !important; 
+    }
+    ion-content {
+        .button-ios {
+             border-radius: 5px;
+            height: 44px;
+            font-size: 1.3rem;
+            color: #fff;
+            background-color: #5d5959;
+            margin: 0.4rem 0.2rem;
+            padding: 0 1em;
+        }
+       // margin-top: 12px !important;
+    }
+    .rownopadding {
+        margin-bottom: 4px !important;
+        padding: 0px !important;
+    }
+    .item-ios {
+        /* padding-left: 16px; */
+         padding-left: 0px !important ; 
+        border-radius: 0;
+        position: relative;
+        font-size: 1.7rem;
+        color: #000;
+        background-color: #fff;
+        -webkit-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+    
+    
+    .personCost span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 15px;
+        line-height: 15px;
+        display: block;
+        display: inline-block;
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-left: 16px !important;
+    }
+    .searchbar-ios {
+        margin-top: 8px !important;
+        padding: 0 8px;
+        min-height: 44px;
+        border-top: 0.55px solid transparent;
+        border-bottom: 0.55px solid rgba(0, 0, 0, 0.05);
+        background: rgba(0, 0, 0, 0.2);
+    }
+    // .item-ios.item-block.thumbnailItem .item-inner h4, .item-ios.item-block.thumbnailItem .item-inner .alert-ios.select-alert .alert-head h2, .alert-ios.select-alert .alert-head .item-ios.item-block.thumbnailItem .item-inner h2 {
+    //     color: #497602;
+    //     white-space: nowrap;
+    //     overflow: hidden;
+    //     text-overflow: ellipsis;
+    //     height: 20px;
+    //     line-height: 20px;
+    //     display: block;
+    //     margin-bottom: 0px;
+    //     font-weight: 500;
+    //     margin-left: 15px !important;
+
+
+
+    // }
+        .item-ios.item-block {
+        // padding: 0px;
+        // background: none;
+        // min-height: 10px;
+        border-bottom: 1px solid #c8c7cc !important;
+       // height: 50px !important;
+    }
+   
+    .counter {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        max-width: 90%;
+        width: 150px !important; 
+    }
+    .item-ios.item-block.thumbnailItem ion-thumbnail[item-left] img {
+        height: 75% !important;
+        width: 85% !important;
+        margin-top: 15px !important;
+        //margin-left: 12px !important;
+    }
+    .item-ios .item-button {
+        padding: 0 0.5em;
+        height: 35px !important;
+        font-size: 1.3rem;
+        // width: 100%;
+    }
+   
+    .button-ios {
+        margin: 8px 0px 0px;
+        padding: 0px 4px;
+        border-radius: 0px;
+        margin-bottom: 0px !important;
+        height: 50px;
+    }
+    .alert-ios .alert-button {
+        margin: 0;
+        border-radius: 0;
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-width: 50%;
+        height: 44px;
+        border-top: 0.55px solid #dbdbdf;
+        border-right: 0.55px solid #dbdbdf;
+        font-size: 17px;
+        color: #1a1a1a;
+        background-color: transparent;
+    }
+   
+}

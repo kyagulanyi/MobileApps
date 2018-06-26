@@ -1,0 +1,38 @@
+page-home {
+    // .content-ios{
+    //     background:color($colors,color5);
+    // }
+    .content-ios {
+        background: color($colors, color5);
+        .scroll-content {
+            padding-bottom: 0px!important;
+            >h5 {
+                color: color($colors, dark);
+                @include whiteNormal($mainHeight, 1);
+                padding: 0px $mainMarg;
+                margin: 0px;
+            }
+        }
+        .grid {
+            padding: $mainMarg/2;
+            background: color($colors, color5);
+            .col {
+                padding: $mainMarg/2;
+                &:last-of-type {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+        .appForm {
+            padding: $mainMarg*2;
+        }
+        
+    }
+    .content-ios hr {
+        height: 1px;
+        color: black;
+    }
+    .item-ios.item-block:last-of-type {
+        margin-bottom: -10px !important;
+    }
+}

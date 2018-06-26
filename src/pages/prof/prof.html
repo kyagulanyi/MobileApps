@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons start="">
+            <button ion-button="" menutoggle="" icon-only="">
+        </button>
+        </ion-buttons>
+        <ion-title>PROFILE</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row class='rows'>
+            <ion-col col-4></ion-col>
+            <ion-col col-4 col-lg-4 col-xl-3 >
+                <img-loader class="iconload center" src="{{imgurl}}logos/small/{{logo}}"> </img-loader>
+            </ion-col>
+            <ion-col col-4 class=''></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12 class='text'>
+                <h5><b>Name:</b>{{firstname}} {{secondname}}</h5>
+                <h5><b>Role:</b>{{role}}</h5>
+                <h5><b>Email:</b>{{email}}</h5>
+            </ion-col>
+        </ion-row>
+        <small (click)='password()'>Change password</small>
+    </ion-grid>
+    <div id='free-30'></div>
+    <span *ngIf="change">
+            <div class="appForm">
+                    <ion-list>
+                        <ion-item>
+                            <ion-icon name="ios-lock" item-left></ion-icon>
+                            <ion-input type='email' placeholder="Old Password" name="password"  [(ngModel)]='changedet.password'  required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-icon name="ios-lock" item-left></ion-icon>
+                            <ion-input type='password' placeholder="New Password" name="password1" [(ngModel)]='changedet.password1'   required></ion-input>
+                        </ion-item>
+                        <ion-item>
+                                <ion-icon name="ios-lock" item-left></ion-icon>
+                                <ion-input type='password' placeholder="Comfirm Password" name="password2" [(ngModel)]='changedet.password2'  required></ion-input>
+                            </ion-item>
+                    </ion-list>
+                </div>
+                <button ion-button block  (click)="changepasssword()"   color="secondary">Confirm Password Change</button>
+
+    </span>
+
+</ion-content>

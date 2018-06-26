@@ -1,0 +1,185 @@
+page-restaurant-menu {
+ 
+    .header-ios {
+        .card-ios .toolbar-ios {
+
+        }
+        .card-ios{
+            margin: 0px !important;
+            width: 100% !important;
+            .toolbar-ios {
+                padding: $navBarPadding;
+                .bar-buttons-ios {
+                    margin: 0px;
+                    display: flex;
+                }
+                .bar-button-ios {
+                    width: $toolbar-ios-height - $navBarPadding*2;
+                    height: $toolbar-ios-height - $navBarPadding*2;
+                    min-height: 30px;
+                    min-width: 30px;
+                    padding: 0px;
+                    border-radius: $mainRadius;
+                    order: 1;
+                    position: relative;
+                    .badge-ios {
+                        @include position(0px, 0px, auto, auto);
+                    }
+                    .icon {
+                        font-size: $headerIconSize!important;
+                        min-width: auto!important;
+                        color: #ee3020;
+                    }
+                    &.activated {
+                        opacity: 1;
+                    }
+                    &.bar-button-menutoggle {
+                        display: inline-block!important;
+                    }
+                }
+                .toolbar-background-ios {
+                    border: none!important;
+                    background-color: #fff;
+                }
+                .title-ios {
+                    padding: 0px ($toolbar-ios-height - $mainMarg)*2+$mainMarg/2;
+                    .toolbar-title {
+                        color: color($colors,light);
+                    }
+                }
+            }
+        }
+        
+    }
+    .content-ios {
+        background: color($colors, color5);
+       
+     .scroll-content {
+        padding-bottom: 0px!important;
+        background: color($colors, color5);
+        //background: color($colors, light);
+        .card-ios {
+             margin: 0px !important; 
+            border-radius: 2px;
+            width: calc(100%);
+            font-size: 1.4rem;
+            background: #fff;
+            /* -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); */
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+      
+        >h5 {
+            color: color($colors, dark);
+            @include whiteNormal($mainHeight, 1);
+            padding: 0px $mainMarg;
+            margin: 0px;
+        }
+        // ion-col {
+        //     z-index: 0;
+        //     height: 100%;
+        //     position: absolute;
+        //     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .8) 100%); /* I added the 0.8 opacity here, to the last rgba which won't affect the child element */
+        // }
+        .card-ios {
+            margin: 0px !important;
+            border-radius: 2px;
+            width: 100%;
+            font-size: 1.4rem;
+            background: #fff;
+            -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+       
+        .grid {
+            padding: $mainMarg/2;
+           margin-top: 5px !important;
+            background: color($colors, color5);
+            .col {
+                //padding: $mainMarg;
+                &:last-of-type {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+       
+    }
+}
+
+       .segment-ios .segment-button.segment-activated {
+        color: #696b65;
+        background-color: #fff;
+        opacity: 1;
+        -webkit-transition: 100ms all linear;
+        transition: 100ms all linear;
+        border-bottom: 2.5px solid #497602;
+        font-size: 25px;
+    }
+   .headeritem{
+      // border-bottom: 0px solid #fff !important;
+   }
+   
+   .icon.icon-ios {
+       font-size: 25px;
+   }
+    .segment-ios .segment-button {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 0;
+        height: 4.2rem;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #f7f1f1;
+        //background-color: #ece5e5;
+        background-color: #ebebeb;
+        font-size: 1.3rem;
+        line-height: 3rem;
+        color: #141414;
+        font-size: 18px;
+        //background-color: transparent;
+    }
+    .alertcss-button {
+        margin: 0;
+        border-radius: 0;
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-width: 50%;
+        height: 44px;
+        border-top: 0.55px solid #dbdbdf;
+        border-right: 0.55px solid #dbdbdf;
+        font-size: 17px;
+        color: #282324 !important;
+        background-color: transparent;
+    }
+    .button-ios .button-inner {
+        overflow: hidden;
+        color: #488aff !important;
+    }
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+    .list-ios > .item-block:first-child {
+        border-top: 0.55px solid #c8c7cc;
+    }
+    .item-ios.item-block {
+        /* padding: 0px; */
+        background: none;
+        min-height: 10px;
+    }
+    .item-ios {
+        /* padding-left: 16px; */
+        padding-left: 16px !important;
+        border-radius: 0;
+        position: relative;
+        font-size: 1.7rem;
+        color: #000;
+        background-color: #fff;
+        -webkit-transition: background-color 200ms linear;
+        transition: background-color 200ms linear;
+    }
+ 
+}

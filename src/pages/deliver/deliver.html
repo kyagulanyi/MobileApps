@@ -1,0 +1,68 @@
+<ion-header>
+        <ion-navbar>
+            <ion-title>Dleivery Details</ion-title>
+        </ion-navbar>
+        <ion-card class="dash" >
+        <ion-row>
+                <ion-col col-12 col-lg-12  col-lg-4 col-xl-3 >
+                    <ion-item class="thumbnailItem" >
+                        <ion-thumbnail item-left>
+                            <img-loader src="{{imgurl}}storelogos/small/"></img-loader>
+                        </ion-thumbnail>   
+                        <p><strong>Order ID:</strong>&nbsp; {{orderid}}</p>
+                        <p><strong>EndUser:</strong>&nbsp;{{endtitle}}</p>
+                        <p> <b>Items  &nbsp;</b> {{itemscount}} </p>
+                        <small><p><strong>Date: &nbsp;</strong>{{date(orderdate)}}</p></small>
+                        <ion-item>
+                                <h5 item-left>  <b> Total:&nbsp;&nbsp;&nbsp;{{total|currency:'UGX     ':'':'1.0-1'}}</b></h5>
+                                
+                            </ion-item>
+                    </ion-item> 
+                </ion-col>  
+            </ion-row>
+           
+            </ion-card>
+        </ion-header>
+        
+        <ion-content>
+                
+                            <ion-card ngFor='let one of orderdetails;let index=i;'  >
+                                    <ion-row class='some-padding'>
+                                            <ion-col col-3   b-r>
+                                                    <h5 class="bold">Product</h5>
+                                                </ion-col>
+                                                <ion-col col-3  >
+                                                    <h5 class="bold">Qty ordered</h5>
+                                                </ion-col>
+                                                <ion-col col-3  >
+                                                        <h5 class="bold">Qty delivered</h5>
+                                                    </ion-col>
+                                                <ion-col  col-3 >
+                                                    <h5 class="bold">Status</h5>
+                                                </ion-col>
+                                        </ion-row>
+                                    <ion-row *ngFor='let one of orderdetails; let  i=index;'  class='some-padding'>
+                                    
+                                    
+                                      
+                                            <ion-col col-3  class="">{{one.subname}}</ion-col>
+                                            <ion-col col-3 class="" >{{one.qtyordered}} {{one.units}}</ion-col>
+                                            <ion-col col-3 class=" " *ngIf="role==='distributionm' && one.deliverystatus!=='full delivery'" (click)='updatedelivery(one)' class="above">{{one.qtydelivered}} {{one.units}}</ion-col>
+                                            <ion-col col-3 class=" " *ngIf="role==='distributionm'" class="">{{one.qtydelivered}} {{one.units}}</ion-col>
+                                            <ion-col col-3 class=" " *ngIf="role==='distributiona'">{{one.qtydelivered}} {{one.units}}</ion-col>
+                                            <!-- <ion-col col-3 class="textalign b-r" >{{one.qtydelivered}} {{one.units}}</ion-col> -->
+                                            <!-- <ion-col col-3  class="textalign ">{{one.deliverystatus}}</ion-col> -->
+                                            <ion-col *ngIf=" one.deliverystatus == 'partial delivery'"  > <strong >Status:</strong>&nbsp; <ion-badge class="total1"><small>Partially delivered</small> </ion-badge> </ion-col>
+                                            <ion-col *ngIf=" one.deliverystatus == 'No delivery'"  > <ion-badge class="total2"><small>Not delivered</small> </ion-badge> </ion-col>
+                                            <ion-col *ngIf=" one.deliverystatus == 'full delivery'" ><ion-badge class="total"><small>Full delivery</small> </ion-badge> </ion-col>
+                                                
+                               
+                                   
+                                </ion-row>
+                               </ion-card> 
+
+               
+                
+             
+        
+        </ion-content>

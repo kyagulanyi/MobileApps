@@ -1,0 +1,123 @@
+<ion-header>
+    <ion-navbar>
+           
+        <ion-buttons >
+            <button ion-button menuToggle icon-only>
+                <ion-icon name="ios-menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title >TradeMo</ion-title>
+       
+
+    </ion-navbar>
+    
+    <ion-card class="dash" >
+        <ion-navbar>
+               
+                                <div item-start class="top"  *ngIf="!showSearchBar">
+                                        <h4 class="title">Inventories</h4>
+                                        <small>A summary of all the Inventories On Stock </small>
+                                </div>
+                               
+                            
+                <ion-searchbar *ngIf="showSearchBar" (click)="getItems($event)" [showCancelButton]="false" item-start></ion-searchbar>
+                
+                <ion-buttons end>
+                    
+                        <button ion-button icon-only clear   (click)="presentPopover()"> <ion-icon name="ios-options"  class="icon-fab2"  color="danger"></ion-icon> </button> 
+                        <button ion-button icon-only clear  (click)="clickedSearchIcon($event)"><ion-icon ios="ios-search" md="md-search" class="icon-fab2"  color="danger"></ion-icon></button>               
+                    
+                    </ion-buttons>
+        </ion-navbar>
+       
+        
+        <ion-row>
+                <ion-col col-12 col-md-6 col-lg-4 col-xl-3 >
+                    <div *ngIf=" role== 'National manager' ">
+                        <ion-segment  [(ngModel)]="proptype">
+                        
+                            <ion-segment-button   value="in">
+               
+                                <ion-icon ios="ios-arrow-down-outline" >&nbsp;&nbsp;<h4 class="norder-subtitle"> Inventories-In</h4> </ion-icon>
+                             
+                            </ion-segment-button>
+                            <ion-segment-button  value="out">
+                                    <ion-icon name="ios-arrow-up-outline">&nbsp;&nbsp; <h4  class="norder-subtitle">Inventories-Out</h4></ion-icon>
+                            
+                             
+                            </ion-segment-button>
+                            
+                          </ion-segment>
+               
+                       </div> 
+                       <div *ngIf=" role== 'Sales manager' ">
+                        <ion-segment  [(ngModel)]="proptype">
+                        
+                            <ion-segment-button   value="in">
+                                    <ion-icon name="ios-arrow-down-outline">&nbsp;&nbsp;<h4 class="norder-subtitle"> Inventories-In</h4> </ion-icon>
+                            </ion-segment-button>
+                            <ion-segment-button  value="out">
+                                    <ion-icon name="ios-arrow-up-outline">&nbsp;&nbsp; <h4  class="norder-subtitle">Inventories-Out</h4></ion-icon>
+                            </ion-segment-button>
+                            <!-- <ion-segment-button  (click)="sort()">
+                                Sort
+                            </ion-segment-button>
+                            <ion-segment-button (click)="clickedSearchIcon($event)">
+                                Search
+                            </ion-segment-button> -->
+                          </ion-segment>
+               
+                       </div> 
+                       <div *ngIf=" role== 'Regional manager' ">
+                        <ion-segment  [(ngModel)]="proptype">
+                        
+                            <ion-segment-button   value="in">
+                                    <ion-icon name="ios-arrow-down-outline">&nbsp;&nbsp;<h4 class="norder-subtitle">Inventories-In</h4> </ion-icon>
+                            </ion-segment-button>
+                            <ion-segment-button  value="out">
+                                    <ion-icon name="ios-arrow-up-outline">&nbsp;&nbsp; <h4  class="norder-subtitle">Inventories-Out</h4></ion-icon>
+                            </ion-segment-button>
+                          </ion-segment>
+                       </div>
+                </ion-col>
+            </ion-row>
+
+     </ion-card>
+     </ion-header>
+
+<ion-content padding>
+    <!-- <ion-card *ngFor="let item of items ; let i = index">
+            <ion-list >
+                    <button ion-item   (click)="gotodetails(item.inventoryid)" [style.background]="buttonColor" (click)="someAction()">
+                      <ion-checkbox *ngIf="showcheckbox" color={{item.color}} checked="false" class="checkbox-round "></ion-checkbox>
+                      <h3  >&nbsp; {{item.name}}</h3>
+                      <ion-note item-end>LastAdded&nbsp;&nbsp;{{date(item.dateadded)}} </ion-note>
+                   
+                    </button>
+                  
+                </ion-list>
+    </ion-card> -->
+    <ion-card class="dash" >
+    <ion-list *ngFor="let item of items ; let i = index" (click)="gotodetails(item.inventoryid)" [style.background]="buttonColor" (click)="someAction()">
+
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/img/thumbnail-totoro.png">
+          </ion-thumbnail>
+          <h2>{{item.name}}</h2>
+          <ion-note>{{date(item.dateadded)}} </ion-note>
+          <button ion-button clear item-end><h4>View</h4></button>
+        </ion-item>
+    
+      </ion-list>
+    </ion-card>
+              <ion-fab right bottom>
+                <ion-row class="top">
+                    <ion-col col-12 col-md-6 col-lg-4 col-xl-3>
+                        <button ion-fab color="danger" (click)="goToOrder('CartPage')">
+                            <ion-icon name="add" class="icon-fab"></ion-icon>
+                    </button>
+                    </ion-col>
+                </ion-row>
+            </ion-fab>
+</ion-content>

@@ -1,0 +1,73 @@
+page-stock-update {
+    margin-top: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 13px !important;
+    overflow: hidden !important;
+    max-width: 270px;
+    max-height: 250px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+    .toolbar-ios {
+       
+        border-top-left-radius: 13px !important; 
+        border-top-right-radius: 13px !important;
+    }
+    .transparent {
+        background: rgba($color: #fff, $alpha: 0.96);
+    }
+    .grid {
+        margin-left: 35px !important;
+        .grid {
+            margin-left: 35px !important;
+            padding: 0px;
+            .col {
+                padding: 0px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                &:last-of-type {
+                    justify-content: flex-end;
+                }
+                .button {
+                    width: auto;
+                    height: $counterBtnSize;
+                    margin: 0px;
+                    max-width: 100%;
+                    .button-inner {
+                        font-size: 1.1rem!important;
+                    }
+                }
+            }
+        }
+        .ratingGroup {
+            margin: 0px 0px $mainMarg/2;
+        }
+        .cam {
+            padding: 5px;
+            width: 50%;
+        }
+    }
+    .toolbar-background-ios {
+        background:  color($colors, color3) !important;
+    }
+    .m {
+        // margin-top: 5px !important;
+        // margin-left: 5px;
+        text-align: center !important; 
+    }
+    .pin{
+        .text-input-ios {
+            margin: 11px 8px 11px 0;
+            padding: 0;
+            width: calc(100% - 90px);
+            border: 1px solid #a69c9c;
+            height: 30px;
+            text-align: center;
+        }
+    }
+}

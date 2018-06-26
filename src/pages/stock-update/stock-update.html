@@ -1,0 +1,56 @@
+<!--
+  Generated template for the SmallmodalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="transparent">
+
+    <ion-navbar>
+        <ion-title>Stock update </ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="transparent">
+    <h4 class="m">Update quantity for {{name}}</h4>
+   
+   
+    <ion-grid>
+        <ion-row >
+           
+           <ion-col col-1></ion-col>
+           <ion-col col-8 col-lg-7 col-md-7 col-lg-4 col-xl-3  >
+                
+            <div class="counter">
+                <ion-icon name="md-remove" (click)="decrement(item,$event)"> </ion-icon>
+                <ion-item>
+                    <ion-input type="number" name='{{obj.qty}}' [(ngModel)]="obj.qty" class='input' min=0></ion-input>
+                </ion-item>
+                <ion-icon name="md-add" (click)="increment(item,$event)"></ion-icon>
+            </div>
+        </ion-col>
+        <ion-col  col-12 col-lg-7 col-md-7 col-lg-4 col-xl-3>
+                <div class="pin">
+                <ion-list>
+                    <ion-item>
+                        <ion-icon name="ios-lock" item-left></ion-icon>
+                        <ion-input type='password' placeholder="Input pin" name="passwords" [(ngModel)]='credential.pin' required></ion-input>
+                   
+                    </ion-item>
+                </ion-list>
+                </div>
+               </ion-col>
+           
+            
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-segment>
+        <button ion-button class=" cancel" type='reset' (click)=' dismiss()'>Cancel</button>
+        <button ion-button class=" updateb" type='submit' (click)='done()'>Update</button>
+    </ion-segment>
+
+</ion-footer>
